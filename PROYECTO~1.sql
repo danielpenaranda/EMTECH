@@ -1,0 +1,4 @@
+--ESTO ES UNA KJ
+Create table PRUEBA(
+ID_P INT NOT NULL,
+NOMBRE_p VARCHAR2(20));-
