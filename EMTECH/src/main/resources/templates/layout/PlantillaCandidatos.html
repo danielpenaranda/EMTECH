@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Candidatos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        <article class="article-matri" th:fragment="formularioCandidatos" >
+            <form class="form-matri" th:action="@{/insertarCandidatos}" method="post">
+                <h2 >Insertar Candidatos</h2>
+                <div style="display: flex;">
+                    <div style="padding-right: 100px">
+                        <label for="incidentes">Incidentes: </label>
+                        <input type="text" id="incidentes" name="incidentes" required><br>
+
+                        <label for="desempeno">Desempeño: </label>
+                        <input type="text" id="desempeno" name="desempeno" required><br>
+
+                        <label for="educacion">Educación: </label>
+                        <input type="text" id="educacion" name="educacion" required><br>
+
+                        <label for="idiomas">Idiomas: </label>
+                        <input type="text" id="idiomas" name="idiomas" required><br>
+                                
+                        <label for="experienciaLaboral">Experiencia laboral: </label>
+                        <input type="text" id="experienciaLaboral" name="experienciaLaboral" required><br>
+                        
+                    </div>
+                    
+                    <div>
+                        <label for="nombre">Nombre: </label>
+                        <input type="text" id="nombre" name="nombre" required><br>
+
+                        <label for="apellido">Apellido: </label>
+                        <input type="text" id="apellido" name="apellido" required><br>
+
+                        <label for="correo">Correo electrónico: </label>
+                        <input type="text" id="correo" name="correo" required><br>
+
+                        <label for="telefono">Número de telefónico: </label>
+                        <input type="text" id="telefono" name="telefono" required><br>
+                                
+                        <label for="reconocimientos">Reconocimientos: </label>
+                        <input type="text" id="reconocimientos" name="reconocimientos" required><br>
+
+                    </div>
+                </div>
+                <input type="submit" value="Agregar nuevo candidaato">
+                <div  style="font-size: 18px;color: blueviolet; font-weight: bold;"
+                th:if="${param.exito}">Candidato agregado correctamente! 
+                </div>
+            </form> 
+        </article>
+    </body>
+</html>
