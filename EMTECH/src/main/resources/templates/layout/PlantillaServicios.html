@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Puestos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <article class="article-matri" th:fragment="formularioServicios" >
+            <form class="form-matri" th:action="@{/insertarServicios}" method="post">
+                <h2 >Insertar Servicios</h2>
+                <div>
+                    <div>
+                        <label for="nombreServicio">Nombre de servicio: </label>
+                        <input type="text" id="nombreServicio" name="nombreServicio" required><br>
+
+                        <label for="telefono">Número telefónico:  </label>
+                        <input type="number" id="telefono" name="telefono" required><br>
+
+                        <label for="email">Correo electrónico: </label>
+                        <input type="text" id="email" name="email" required><br>
+
+                        <label for="idDS">Dirección: </label>
+                        <select id="idDS" name="idDS">
+                            <option value="1">Costa Rica (San José-San Pedro)</option>
+                            <option value="2">España (Barcelona-Cataluña)</option>
+                            <option value="3">Estados Unidos(New York-Manhatan)</option>
+                        </select>
+                        
+                         <label for="idC">Compañía:  </label>
+                        <select id="idC" name="idC">
+                            <option value="1">Coca Cola</option>
+                            <option value="2">Zara </option>
+                            <option value="3">Amazon </option>
+                        </select>
+                       
+                        
+                    </div>
+                                        
+                </div>
+                <input type="submit" value="Agregar nuevo servicio">
+                
+            </form> 
+        </article>
+        <article th:fragment="listaServicios">
+            <h2 style="text-align: center; margin-top: 20px">Lista de Servicios</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre de servicio</th>
+                    <th>Telefono</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+           <tbody>
+                <tr th:each="servicio : ${servicios}">
+                    <td th:text="${servicio.idServicio}"></td>
+                    <td th:text="${servicio.nombreServicio}"></td>
+                    <td th:text="${servicio.telefono}"></td>
+                    <td th:text="${servicio.email}"></td>
+                </tr>
+            </tbody>
+        </table>
+        </article>
+    </body>
+</html>

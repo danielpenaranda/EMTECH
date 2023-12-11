@@ -82,4 +82,73 @@ input[type="submit"]:hover {
     margin: 0 0 0 10px;
     width: 100%;
 }
+/*STYLES PARA TABLAS*/
+table{
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
 
+.table-container {
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    background-color: #CCD264;
+    padding: 10px;
+    text-align: left;
+    font-weight: bold;
+    border: 1px solid black;
+    text-align: center;
+}
+
+td {
+    background-color: #ffv;
+    padding: 10px;
+    border: 1px solid black; 
+}
+
+.tarjet-container{
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 30px;
+    margin-left: 15%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 65%;
+    border-collapse: collapse;
+    align-items: center;
+}
+
+.actions-column {
+    width: 1%;
+    white-space: nowrap;
+}
+
+.tarjet{ 
+    margin: 20px auto;
+    width: 100%;
+}
+.btn{
+    background: #BBB372;
+    color: #eee;
+    font-weight: bold;
+    margin-bottom:  10px;
+}
+
+
+.btn:hover{
+    background-color: blueviolet;
+    color: #fff;
+}
+select{
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 2px solid #BBB372;
+    cursor: pointer;
+}

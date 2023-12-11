@@ -54,5 +54,64 @@
                 </div>
             </form> 
         </article>
+        
+        <article th:fragment="listaCandidatos">
+            <h2 style="text-align: center; margin-top: 20px">Lista de Candidatos</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Apellido</th>
+                    <th>Nombre</th>
+                    <th>Correo</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+           <tbody>
+                <tr th:each="candidato : ${candidatos}">
+                    <td th:text="${candidato.idCandidato}"></td>
+                    <td th:text="${candidato.nombre}"></td>
+                    <td th:text="${candidato.apellido}"></td>
+                    <td th:text="${candidato.correo}"></td>
+                    <td>
+                        <a th:href="@{/datosCandidatos/}+${candidato.idCandidato}" class="btn">
+                        <i class="fa-solid fa-book"></i></i> Observar Candidato</a>
+                                                                                              
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </article>
+        <article th:fragment="detalleCandidatos">
+            
+            <div class="tarjet-container">
+            <div class="tarjet">
+                <h1>[[${candidato.nombre}]] [[${candidato.apellido}]]</h1>
+                <br>
+                    <div style="display: flex;width: 100%">
+                        <div>
+                           <div>
+                                <h5 style="text-align: justify">Curriculum: </h5>
+                                <h6 style="text-align: justify"> - Educación: [[${candidato.curriculum.educacion}]]</h6>
+                                <h6 style="text-align: justify"> - Condicion: [[${candidato.curriculum.reconocimientos}]]</h6>
+                                <h6 style="text-align: justify"> - Reconocimientos: [[${candidato.curriculum.idiomas}]]</h6>
+                                <h6 style="text-align: justify"> - Idiomas: [[${candidato.curriculum.experienciaLaboral}]]</h6>
+                                 <br>
+                                <h5 style="text-align: justify">Expedientes: </h5>
+                                <h6 style="text-align: justify"> - Incidentes: [[${candidato.expediente.incidentes}]]</h6>
+                                <h6 style="text-align: justify"> - Desempeño: [[${candidato.expediente.desempeno}]]</h6>
+                                 <br>
+                                <h5 style="text-align: justify">Datos de contacto: </h5>
+                                <h6 style="text-align: justify"> - Correo electrónico: [[${candidato.correo}]]</h6>
+                                <h6 style="text-align: justify"> - Telefono: [[${candidato.telefono}]]</h6>
+                            </div>
+                            <br>
+                                   
+                        </div>                        
+                    </div>
+            </div> 
+        </div>
+        </article>
+        
     </body>
 </html>

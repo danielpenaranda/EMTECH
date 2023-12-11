@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Puestos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <article class="article-matri" th:fragment="formularioPuestos" >
+            <form class="form-matri" th:action="@{/insertarPuestos}" method="post">
+                <h2 >Insertar Puestos</h2>
+                <div>
+                    <div>
+                        <label for="nombreArea">Área: </label>
+                        <input type="text" id="nombreArea" name="nombreArea" required><br>
+
+                        <label for="cantidadVacantes">Vacantes: </label>
+                        <input type="number" id="cantidadVacantes" name="cantidadVacantes" required><br>
+
+                        <label for="descripcion">Descripción: </label>
+                        <input type="text" id="descripcion" name="descripcion" required><br>
+
+                        <label for="descripcionR">Requisitos: </label>
+                        <input type="text" id="descripcionR" name="descripcionR" required><br>
+                                
+                        <label for="nombrePuesto">Puesto:  </label>
+                        <input type="text" id="nombrePuesto" name="nombrePuesto" required><br>
+                                
+                        <label for="disponibles">Disponibles:  </label>
+                        <input type="number" id="disponibles" name="disponibles" required><br>
+                        
+                    </div>
+                                        
+                </div>
+                <input type="submit" value="Agregar nuevo puesto">
+                
+            </form> 
+        </article>
+         <article th:fragment="listaPuestos">
+            <h2 style="text-align: center; margin-top: 20px">Lista de Puestos</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Puesto</th>
+                    <th>Disponibles</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+           <tbody>
+                <tr th:each="puesto : ${puestos}">
+                    <td th:text="${puesto.idPuestos}"></td>
+                    <td th:text="${puesto.nombrePuesto}"></td>
+                    <td th:text="${puesto.disponibles}"></td>
+                    <td>
+                        <a th:href="@{/datosPuestos/}+${puesto.idPuestos}" class="btn">
+                        <i class="fa-solid fa-book"></i></i> Observar Puesto</a>                                                                      
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        </article>
+        
+        <article th:fragment="detallePuestos">
+            <div class="tarjet-container">
+            <div class="tarjet">
+                <h1>Información del puesto</h1>
+                <br>
+                    <div style="width: 100%">
+                        <div>
+                           <div>
+                                <h5 style="text-align: justify">Areas de los puestos: </h5>
+                                <h6 style="text-align: justify"> - Nombre del área: [[${puesto.areasPuestos.nombreArea}]]</h6>
+                                <h6 style="text-align: justify"> - Vacantes:  [[${puesto.areasPuestos.cantidadVacantes}]]</h6>
+                                <h6 style="text-align: justify"> - Descripción: [[${puesto.areasPuestos.descripcion}]]</h6>
+                                 <br>
+                                <h5 style="text-align: justify">Datos de puesto: </h5>
+                                <h6 style="text-align: justify"> - Requisitos: [[${puesto.requisitos.descripcion}]]</h6>
+                                <h6 style="text-align: justify"> - Desempeño: [[${puesto.nombrePuesto}]]</h6>
+                                <h6 style="text-align: justify"> - Desempeño: [[${puesto.disponibles}]]</h6>
+                                 <br>
+                              
+                            </div>
+                            <br>
+                                   
+                        </div>                        
+                    </div>
+            </div> 
+        </div>
+        </article>
+    </body>
+</html>

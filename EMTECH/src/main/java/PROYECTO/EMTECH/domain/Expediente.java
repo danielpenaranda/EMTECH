@@ -18,14 +18,14 @@ public class Expediente implements Serializable{
     private static final long serialVersionUID =1L;
     
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator="expediente_seq_generador")
-    @SequenceGenerator(name="expediente_seq_generador", sequenceName="expedientes_seq",allocationSize=1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE,generator="expedientes_seq_generador")
+    @SequenceGenerator(name="expedientes_seq_generador", sequenceName="expedientes_seq",allocationSize=1)
     @Column(name="id_expediente")
     private Long idExpediente;
     private String incidentes;
     private String desempeno;
 
-    @OneToMany(mappedBy = "expedientes", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "expediente", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Candidatos> candidatos;
     
     public Expediente() {
@@ -35,8 +35,5 @@ public class Expediente implements Serializable{
         this.incidentes = incidentes;
         this.desempeno = desempeno;
     }
-    
-    
-    
     
 }

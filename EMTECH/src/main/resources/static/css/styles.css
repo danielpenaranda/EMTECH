@@ -52,6 +52,7 @@ header{
     color: #ffcc00;
 }
 
+
 @media(max-width:700px){
     header{
         flex-direction: column;
@@ -61,7 +62,25 @@ header{
         padding: 10px 0px;
     }
 }
+.navbar {/*************/
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between; /* Esto distribuirá los elementos horizontalmente */
+    align-items: center; /* Para alinear verticalmente los elementos */
+    padding: 0;
+    margin: 0;
+}
 
+.navbar li {
+    margin-right: 15px; /* Ajusta el espaciado entre los elementos del menú */
+
+}
+
+.navbar a {
+    text-decoration: none;
+     display: inline-block;
+    /* Otros estilos */
+}/*************/
 footer{
     background: black;
     text-align: center;

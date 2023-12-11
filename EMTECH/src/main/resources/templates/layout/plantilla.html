@@ -18,25 +18,32 @@
                             <a href="/"><img src="/img/logo_ejecutivo.jpg" alt=""></a>
                         </div>
                         <nav>
+                            <ul class="navbar">
                             <li class="nav-item dropdown">
                                 <a class="a_navbar nav-link dropdown-toggle me-4 fs-3" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Catalogo</a>
-                                <ul class="dropdown-menu" style="background-color: #F2FD3A; " aria-labelledby="navbarDropdown">
-                                    <li><a class="a_navbar dropdown-item" href="/#" >Servicios</a></li>
-                                    <li><a class="a_navbar dropdown-item" href="/#" >Puestos</a></li>
-                                    <li><a class="a_navbar dropdown-item" href="/#" >Candidatos</a></li>
+                                <ul class="dropdown-menu" style="background-color: #white; " aria-labelledby="navbarDropdown">
+                                    <li><a class="a_navbar dropdown-item" href="/servicios" >Servicios</a></li>
+                                    <li><a class="a_navbar dropdown-item" href="/puestos" >Puestos</a></li>
+                                    <li><a class="a_navbar dropdown-item" href="/candidatos" >Candidatos</a></li>
                                 </ul>
+                                
+                                <a class="a_navbar nav-link dropdown-toggle me-4 fs-3" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Reportes</a>
+                                <ul class="dropdown-menu" style="background-color: #white; " aria-labelledby="navbarDropdown">
+                                    <li><a class="a_navbar dropdown-item" href="/listaServicios" >Lista de servicios</a></li>
+                                    <li><a class="a_navbar dropdown-item" href="/listaPuestos" >Lista de puestos</a></li>
+                                    <li><a class="a_navbar dropdown-item" href="/listaCandidatos" >Lista de candidatos</a></li>
+                                </ul>
+                                
                             </li>
-                            <a class="a_navbar" th:href="@{/reportes/reportes}">Reportes</a>
-                            <a class="a_navbar" href="#">Ofertas</a>
-                            <a class="a_navbar" href="@{/contacto/contacto}">Contacto</a>
-                            <a class="a_navbar" href="/candidatos">Candidatos</a>
+                            </ul>
                         </nav>
                     </header>
                     <main>
 
                     </main>
                     <footer th:fragment="footer">
-                        Proyecto Administracion de Base de Datos. Fidélitas
+                        <p>Derechos Reservados &copy; 2023</p>
+                        Proyecto Administración de Bases de Datos. Fidélitas
                     </footer>
                 </body>
                 </html>

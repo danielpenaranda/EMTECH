@@ -31,14 +31,12 @@ public class Curriculum implements Serializable{
     @Column(name="id_curriculum")
     private Long idCurriculum;
     private String educacion;
-    private String reconocimiento;
+    private String reconocimientos;
     private String idiomas;
     @Column(name="experiencia_laboral")
     private String experienciaLaboral;
 
     @OneToMany(mappedBy = "curriculum", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Candidatos> candidatos;
-    
-    
-    
+
 }

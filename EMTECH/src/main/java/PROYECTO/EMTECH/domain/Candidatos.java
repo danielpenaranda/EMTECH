@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import java.io.Serializable;
 import lombok.Data;
@@ -33,9 +34,12 @@ public class Candidatos implements Serializable{
     @Column(name="id_expediente")
     private int idExpediente;
     
+    @ManyToOne
     @JoinColumn(name = "id_expediente", referencedColumnName = "id_expediente", insertable = false, updatable = false)
-    private Expediente expedientes;
-    @JoinColumn(name = "id_curriculum", referencedColumnName = "id_curriculum", insertable = false, updatable = false)
+    private Expediente expediente;
+    
+    @ManyToOne
+    @JoinColumn(name = "id_curriculum", referencedColumnName = "id_curriculum",insertable = false, updatable = false)
     private Curriculum curriculum;
 
     public Candidatos() {
@@ -49,10 +53,5 @@ public class Candidatos implements Serializable{
         this.idCurriculum = idCurriculum;
         this.idExpediente = idExpediente;
     }
-    
-    
-    
 
-
-    
 }

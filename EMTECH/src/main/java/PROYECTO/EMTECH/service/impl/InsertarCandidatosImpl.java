@@ -1,6 +1,9 @@
 package PROYECTO.EMTECH.service.impl;
 
+import PROYECTO.EMTECH.dao.CandidatosDao;
+import PROYECTO.EMTECH.domain.Candidatos;
 import PROYECTO.EMTECH.service.InsertarCandidatos;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
@@ -13,9 +16,13 @@ import org.springframework.stereotype.Service;
 public class InsertarCandidatosImpl implements InsertarCandidatos{
 
     private final JdbcTemplate jdbcTemplate;
+    private final CandidatosDao candidatosDao;
+    
+    
     @Autowired
-    public InsertarCandidatosImpl(JdbcTemplate jdbcTemplate){
-        this.jdbcTemplate = jdbcTemplate;        
+    public InsertarCandidatosImpl(JdbcTemplate jdbcTemplate, CandidatosDao candidatoDao){
+        this.jdbcTemplate = jdbcTemplate;   
+        this.candidatosDao= candidatoDao;
     }
     
     @Override
@@ -56,6 +63,16 @@ public class InsertarCandidatosImpl implements InsertarCandidatos{
         System.err.println("ERROR AL INSERTAR CANDIDATOS1");
         e.printStackTrace();
     }
+    }
+
+    @Override
+    public List<Candidatos> obtenerDatosCandidato() {
+        return candidatosDao.findAll();
+    }
+
+    @Override
+    public Candidatos getCandidatosById(Long id) {
+        return candidatosDao.findById(id).orElse(null);
     }
     
 }
