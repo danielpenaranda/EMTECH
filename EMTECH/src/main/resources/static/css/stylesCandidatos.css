@@ -37,7 +37,7 @@ input {
 
 input[type="submit"] {
     font-weight: bold;
-    background-color: #CCD264;
+    background-color: #ffcc00;
     color: #000;
     cursor: pointer;
     border:none;
@@ -55,13 +55,14 @@ input[type="submit"] {
 
 
 input[type="submit"]:hover {
-    background-color: blueviolet;
-    color: #fff;
+    background-color: #007bff;
+    color: #000;
+    
 }
 
 .button-login:hover {
-    background-color: blueviolet; 
-    color: #fff; 
+    background-color: #007bff; 
+    color: #000; 
 }
 
 .button-login a:hover {
@@ -134,16 +135,16 @@ td {
     width: 100%;
 }
 .btn{
-    background: #BBB372;
-    color: #eee;
+    background: #ffcc00;/*Amarillo*/
+    color: #000;
     font-weight: bold;
     margin-bottom:  10px;
 }
 
 
 .btn:hover{
-    background-color: blueviolet;
-    color: #fff;
+    background-color: #007bff;
+    color: #000; /* Color azul */
 }
 select{
     width: 100%;
